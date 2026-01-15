@@ -4,7 +4,7 @@ import { useCart } from '@/context/CartContext';
 import { X, Plus, Minus, Trash2, ShoppingBag as ShoppingBagIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Button } from './ui/Button';
-import AIImage from './AIImage';
+import Image from 'next/image';
 
 export default function CartDrawer() {
   const { isCartOpen, setIsCartOpen, items, removeFromCart, updateQuantity, cartTotal, clearCart } = useCart();
@@ -61,11 +61,11 @@ export default function CartDrawer() {
                 items.map((item) => (
                   <div key={item.id} className="flex gap-4">
                     <div className="relative w-20 h-20 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
-                      <AIImage
-                        prompt={item.image}
+                      <Image
+                        src={item.image}
                         alt={item.name}
                         fill
-                        className="w-full h-full"
+                        className="w-full h-full object-cover object-center"
                       />
                     </div>
                     <div className="flex-1 flex flex-col justify-between">

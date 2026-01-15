@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import { Button } from './ui/Button';
-import AIImage from './AIImage';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -67,12 +67,12 @@ export default function Hero() {
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-100 to-violet-100 rounded-[2rem] transform rotate-3" />
             <div className="absolute inset-0 bg-gray-100 rounded-[2rem] overflow-hidden transform -rotate-3 shadow-2xl">
-               <AIImage
-                prompt="A professional lifestyle photo of a developer wearing a stylish Google Cloud hoodie in a modern, bright office setting, soft sunlight, high resolution."
+               <Image
+                src="/images/hero.png"
                 alt="Hero Image"
                 fill
-                className="w-full h-full"
-              />
+                className="w-full h-full object-cover object-center"
+p              />
             </div>
             
             {/* Floating Card */}

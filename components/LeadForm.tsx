@@ -91,9 +91,10 @@ export default function LeadForm() {
                 <select
                   {...register('interest')}
                   id="interest"
+                  defaultValue=""
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900"
                 >
-                  <option value="" disabled selected>Select an option</option>
+                  <option value="" disabled>Select an option</option>
                   <option value="General">General Updates</option>
                   <option value="Developers">Developers</option>
                   <option value="Cloud">Google Cloud</option>
