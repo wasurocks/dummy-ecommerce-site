@@ -72,7 +72,7 @@ export default function Hero() {
                 alt="Hero Image"
                 fill
                 className="w-full h-full object-cover object-center"
-p              />
+              />
             </div>
             
             {/* Floating Card */}
