@@ -36,32 +36,32 @@ export default function LeadForm() {
   };
 
   return (
-    <section className="py-24 bg-gray-900 text-white relative overflow-hidden">
+    <section className="py-24 bg-blue-50 text-gray-900 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-violet-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
+      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob" />
+      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-2xl mx-auto text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay in the Loop</h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-600 text-lg">
             Subscribe to our newsletter for exclusive drops, developer news, and special offers.
           </p>
         </div>
 
-        <div className="max-w-md mx-auto bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
+        <div className="max-w-md mx-auto bg-white p-8 rounded-2xl border border-gray-100 shadow-xl">
           {submitted ? (
             <div className="text-center py-8">
-              <div className="w-16 h-16 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2">You're on the list!</h3>
-              <p className="text-gray-400">Thanks for subscribing.</p>
+              <h3 className="text-xl font-bold mb-2">You&apos;re on the list!</h3>
+              <p className="text-gray-600">Thanks for subscribing.</p>
               <button 
                 onClick={() => setSubmitted(false)}
-                className="mt-6 text-blue-400 hover:text-blue-300 text-sm font-medium"
+                className="mt-6 text-blue-600 hover:text-blue-500 text-sm font-medium"
               >
                 Subscribe another email
               </button>
@@ -69,7 +69,7 @@ export default function LeadForm() {
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" id="lead-form">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                   Email Address
                 </label>
                 <input
@@ -77,21 +77,21 @@ export default function LeadForm() {
                   type="email"
                   id="email"
                   placeholder="you@example.com"
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white placeholder-gray-500"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-400"
                 />
                 {errors.email && (
-                  <p className="mt-2 text-sm text-red-400">{errors.email.message}</p>
+                  <p className="mt-2 text-sm text-red-500">{errors.email.message}</p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="interest" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-2">
                   Area of Interest
                 </label>
                 <select
                   {...register('interest')}
                   id="interest"
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white [&>option]:text-black"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900"
                 >
                   <option value="" disabled selected>Select an option</option>
                   <option value="General">General Updates</option>
@@ -100,7 +100,7 @@ export default function LeadForm() {
                   <option value="Hardware">Hardware (Pixel/Nest)</option>
                 </select>
                 {errors.interest && (
-                  <p className="mt-2 text-sm text-red-400">{errors.interest.message}</p>
+                  <p className="mt-2 text-sm text-red-500">{errors.interest.message}</p>
                 )}
               </div>
 

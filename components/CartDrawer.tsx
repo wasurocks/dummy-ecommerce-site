@@ -1,10 +1,10 @@
 'use client';
 
 import { useCart } from '@/context/CartContext';
-import { X, Plus, Minus, Trash2 } from 'lucide-react';
+import { X, Plus, Minus, Trash2, ShoppingBag as ShoppingBagIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Button } from './ui/Button';
-import Image from 'next/image';
+import AIImage from './AIImage';
 
 export default function CartDrawer() {
   const { isCartOpen, setIsCartOpen, items, removeFromCart, updateQuantity, cartTotal, clearCart } = useCart();
@@ -50,7 +50,7 @@ export default function CartDrawer() {
               {items.length === 0 ? (
                 <div className="h-full flex flex-col items-center justify-center text-center space-y-4">
                   <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
-                    <ShoppingBag className="w-8 h-8 text-gray-400" />
+                    <ShoppingBagIcon className="w-8 h-8 text-gray-400" />
                   </div>
                   <p className="text-gray-500 text-lg">Your cart is empty</p>
                   <Button variant="outline" onClick={() => setIsCartOpen(false)}>
@@ -61,12 +61,11 @@ export default function CartDrawer() {
                 items.map((item) => (
                   <div key={item.id} className="flex gap-4">
                     <div className="relative w-20 h-20 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
-                      <Image
-                        src={item.image}
+                      <AIImage
+                        prompt={item.image}
                         alt={item.name}
                         fill
-                        className="object-cover"
-                        referrerPolicy="no-referrer"
+                        className="w-full h-full"
                       />
                     </div>
                     <div className="flex-1 flex flex-col justify-between">

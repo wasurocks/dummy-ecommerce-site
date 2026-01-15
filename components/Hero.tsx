@@ -2,11 +2,11 @@
 
 import { motion } from 'motion/react';
 import { Button } from './ui/Button';
-import Image from 'next/image';
+import AIImage from './AIImage';
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-16 md:pt-48 md:pb-32 overflow-hidden">
+    <section className="relative pt-32 pb-16 md:pt-48 md:pb-32 overflow-hidden bg-gradient-to-b from-blue-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -67,13 +67,11 @@ export default function Hero() {
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-100 to-violet-100 rounded-[2rem] transform rotate-3" />
             <div className="absolute inset-0 bg-gray-100 rounded-[2rem] overflow-hidden transform -rotate-3 shadow-2xl">
-               <Image
-                src="https://picsum.photos/seed/hero/800/800"
+               <AIImage
+                prompt="A professional lifestyle photo of a developer wearing a stylish Google Cloud hoodie in a modern, bright office setting, soft sunlight, high resolution."
                 alt="Hero Image"
                 fill
-                className="object-cover"
-                referrerPolicy="no-referrer"
-                priority
+                className="w-full h-full"
               />
             </div>
             

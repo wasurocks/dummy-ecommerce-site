@@ -2,10 +2,9 @@
 
 import { Product } from '@/lib/data';
 import { useCart } from '@/context/CartContext';
-import { Button } from './ui/Button';
-import Image from 'next/image';
 import { motion } from 'motion/react';
 import { Plus } from 'lucide-react';
+import AIImage from './AIImage';
 
 export default function ProductCard({ product }: { product: Product }) {
   const { addToCart } = useCart();
@@ -18,12 +17,11 @@ export default function ProductCard({ product }: { product: Product }) {
       className="group relative"
     >
       <div className="aspect-square relative bg-gray-100 rounded-2xl overflow-hidden mb-4">
-        <Image
-          src={product.image}
+        <AIImage
+          prompt={product.image}
           alt={product.name}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          referrerPolicy="no-referrer"
+          className="w-full h-full transition-transform duration-500 group-hover:scale-105"
         />
         <button
           onClick={() => addToCart(product)}
